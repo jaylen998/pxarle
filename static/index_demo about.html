@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FUNGO | About</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <!-- w3 css -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <!-- bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.15.5/dist/bootstrap-table.min.js"></script>
+  <!-- amcharts -->
+  <script src="https://www.amcharts.com/lib/4/core.js"></script>
+  <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://www.amcharts.com/lib/4/plugins/wordCloud.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+  <script src="Word_cloud.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Open Sans", sans-serif;
+    }
+
+    #chartdiv3 {
+      width: 100%;
+      height: 500px;
+    }
+
+   
+
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #000;
+      color: white;
+      cursor: pointer;
+      padding: 8px 15px;
+      border-radius: 4px;
+    }
+
+    #myBtn:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+
+<body class="w3-light-grey">
+  <!-- Top container -->
+  <div class="w3-bar w3-top w3-white w3-large" style="z-index:4">
+    <!--<button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>-->
+    <span class="w3-bar-item w3-lift">
+      <span style="font-size: 24px; font-weight: bold; padding-right: 8px; "><a href="#" style="text-decoration:none; color:#000;">FUNGO</a></span>
+      <span class="nav-title">觀光文案效益預測系統</span>
+    </span>
+    <span class="w3-bar-item w3-right"><a href="login.html" class="h-red">登入</a></span>
+    <span class="w3-bar-item w3-right"><a href="index_demo about.html" class="h-red">關於</a></span>
+  </div>
+  <!-- back to top button -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top" class="w3-dark-grey"><i
+      class="fas fa-angle-up"></i></button>
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+    title="close side menu" id="myOverlay"></div>
+  <div class="container">
+
+    <!-- Page content start -->
+    <div class="w3-main" style="margin-top:130px;">
+      <!-- Article section start 
+      <div class="w3-row-padding w3-margin-bottom w3-container" style="margin:500 100 0 100px">
+        <img src="img/election.png" class="ex5-box" width="200" style="margin:auto;">
+        <header style="padding-top:30px;padding-bottom:10px;">
+          <h5 class="title-01" style="text-align: center">精打細算增加廣告效益</h5>
+          <div class="hr-line-solid"></div>
+        </header>
+        <textarea class="w3-input title-01" style="height:300px; border: 1px solid #c5c5c5" placeholder="請輸入想預估的文章" id="請輸入想預估的文章"
+          name="請輸入想預估的文章" cols="45" rows="8" aria-required="true"></textarea>
+        <div class="w3-row-padding w3-margin-bottom"></div>
+        <div>
+          <button class="w3-button w3-dark-grey w3-right">開始計算  <i class="fa fa-arrow-right"></i></button>
+        </div>
+      </div>
+       Article section end -->
+
+      <div class="hr-line-solid"></div>
+
+      <!-- Gauge section start--> 
+      <div class="w3-row-padding w3-margin-bottom w3-container">
+        <div id="chartdiv3"></div>
+        <header style="padding-top:22px">
+          <div class="w3-row-padding w3-margin-bottom"></div>
+          <h3 style="text-align: center;" class="gs-letter">前言動機</h3>
+        </header>
+        <hr>
+        <header class="container">
+          <!-- 以下是一個 slider -->
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <!-- 以下是 slider 下方的指示器 -->
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <!--<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
+            </ol>
+            <!-- 以下是 slider 中的影像圖片區 -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="{{ url_for('static', filename='01.png') }}" alt="First slide">
+                <!-- 下方 div 是標題說明區 ********************************************** -->
+                <div class="carousel-caption d-none d-md-block">
+                  <!--<h3>The Quest of Watchmakers</h3>
+                  <p>Constant Escapement L.M.</p>-->
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="{{ url_for('static', filename='02.png') }}" alt="Second slide">
+                <!-- 下方 div 是標題說明區 ********************************************** -->
+                <div class="carousel-caption d-none d-md-block">
+                  <!--<h3>Grand Prix d'Horlogerie de Genève</h3>
+                  <p>La Esmeralda Tourbillon</p>-->
+                </div>
+              </div>
+              <!--<div class="carousel-item">
+                <img class="d-block w-100" src="http://tsweb44.com/TSJDXweb7/images/banner/banner3.jpg" alt="Third slide">-->
+                <!-- 下方 div 是標題說明區 ********************************************** 
+                <div class="carousel-caption d-none d-md-block">
+                  <h3>Grand Prix d'Horlogerie de Genève</h3>
+                  <p>The Cat's Eye Tourbillon with Gold Bridge</p>
+                </div>
+              </div>-->
+            </div>
+            <!-- 以下是 slider 左右方向的控制區 -->
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+            
+          </div>
+        </header>
+        
+      </div>
+      <!-- Gauge section end -->
+
+      <!-- Table section start 
+      <div class="w3-row-padding w3-margin-bottom w3-container">
+        <table data-toggle="table" data-sortable="true" data-sort-class="table-active" data-pagination="true"
+          data-show-search-clear-button="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true"
+          data-show-columns-toggle-all="true"
+          data-url="https://cors-anywhere.herokuapp.com/https://examples.bootstrap-table.com/json/data1.json"
+          style="background-color: #fff; padding-top: 22px">
+          <thead>
+            <tr>
+              <th data-field="id" data-sortable="true">排名 RANKING</th>
+              <th data-field="name" data-sortable="true">關鍵字 KEYWORD</th>
+              <th data-field="price" data-sortable="true">TF-IDF</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+       Table section end -->
+    </div>
+
+    <!-- Bar chart race section start -->
+    <div class="w3-row-padding w3-margin-bottom w3-container">
+      <!--<div id="chartdiv2" style="padding-top:22px"></div>-->
+    </div>
+    </div>
+    <!-- Bar chart race section end -->
+
+    <!-- Footer start -->
+    <footer class="w3-container w3-padding-16 w3-light-grey text-center gray-color">
+      Copyright © 2020 Fungo 版權所有
+    </footer>
+    <!-- Footer end -->
+
+
+
+
+</body>
+
+<script>
+  // back to top button
+  function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+  }
+
+  var mybutton = document.getElementById("myBtn");
+
+  window.onscroll = function () {
+    scrollFunction()
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+</html>

@@ -1,0 +1,37 @@
+.h-red{
+    text-decoration:none;
+    color: black;
+}
+.h-red:hover{
+    text-decoration:none;
+    color: gray;
+}
+
+.nav-title{
+    letter-spacing: 5px;
+    font-size: 10px;
+}
+
+h5.title-01,
+h3.gs-letter {
+    letter-spacing: 5px;
+    font-weight: normal !important;
+}
+
+.gray-color{
+    background-color: #c4c4c4 !important;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.ex5-box{
+    width: 254px;
+    height: 181.71px;
+    max-width:  100%;    
+     display:  flex;
+     align-items: center;
+     justify-content:  center;
+    }
+    
