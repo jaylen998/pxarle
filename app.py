@@ -57,8 +57,8 @@ def test():
     haa = flask.request.args.get('haa')
     x = str(haa).count('f')
     return str(x)
-
-
+'''
+'''
 
 '''
 @app.route('/')
